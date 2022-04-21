@@ -1,0 +1,47 @@
+.overview{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+}
+.ovrcontainer{
+    background-color: gray;
+    text-align: center;
+    height: 110%;
+    width: 80%;
+    margin: auto;
+    border-radius: 1rem;
+}
+.table{
+    width: 95vw;
+    height: 60vh;
+    font-size:x-large;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: justify;
+    border-radius: 3px;
+    background-color: #c4c4c4;
+    border: 2px black solid;
+}
+.tr{
+    border: 2px black solid;
+}
+.trPosition{
+    text-align: center;
+}
+.linkStyle{
+    color: black;
+    background-color: rgb(163, 159, 159);
+}
+.linkStyle:hover{
+    color:blueviolet;
+    transition: 200ms;
+}
+.bg{
+    background-color: rgb(188, 186, 186);
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    min-height: 100vh;
+}
+h2{
+    font-size: xx-large;
+}

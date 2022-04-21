@@ -1,0 +1,30 @@
+.tableDetail{
+    width: 95vw;
+    height: 60vh;
+    font-size:x-large;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: justify;
+    border-radius: 3px;
+    border: 2px black solid;
+    text-align: center;
+}
+.bgDetail{
+    background-color: rgb(188, 186, 186);
+    min-height: 100vh;
+}
+.linkStyles{
+    color: black;
+    background-color: rgb(163, 159, 159);
+    padding: 1px;
+    margin-top: 2rem;
+    text-decoration: none;
+    border: 1px black solid;
+}
+.linkStyles:hover{
+    color:blueviolet;
+    transition: 200ms;
+}
+.trBorder{
+    border: 1px black solid;
+}

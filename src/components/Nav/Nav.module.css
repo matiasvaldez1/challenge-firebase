@@ -1,0 +1,10 @@
+.container{
+    background-color: rgb(158, 158, 158);
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    font-size: small;
+}
+h1{
+    font-weight: 500;
+}

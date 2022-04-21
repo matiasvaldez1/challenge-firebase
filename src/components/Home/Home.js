@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react';
 import { useSelector,useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {getBusiness} from '../../Redux/actions'
+import Nav from '../Nav/Nav';
+import styles from './Home.module.css'
 
 function Home() {
   const dispatch = useDispatch()
@@ -16,24 +18,47 @@ function Home() {
 
   return (
     <>
+    <Nav />
+    <div className={styles.bg}>
     {business.length > 1 ?
-    <div className="App">
+    <div>
       <div>
-        <div>Empresa con mas ventas {max}</div>
-        <div>Mes con mas ventas {month.month}</div>
-        {business && business.map((buss,index) =>{
-          return (
-          <div key={index}>
-            <h1>{buss.nameAgency}</h1>
-            <p>Total de ventas {buss.finalPrice}</p>
-            <p>Comision {buss.finalPrice * 0.025}</p>
-            <Link to={`/empresas/${buss.nameAgency.replace(/\s/g, '')}`}>Detalles de la empresa</Link>
+        <div className={styles.overview}>
+          <div className={styles.ovrcontainer}>
+            <h1>Empresa con mas ventas</h1>
+            <h2>${max}</h2>
           </div>
-          )
-        })}
+          <div className={styles.ovrcontainer}>
+            <h1>Mes con mas ventas</h1>
+            <h2>{month.month}</h2>
+          </div>
+        </div>
+        <div>
+            <table cellSpacing='10' className={styles.table}>
+              <tbody>
+                  <tr className={styles.trPosition}>
+                    <th className={styles.tr}>Nombre de empresa</th>
+                    <th className={styles.tr}>Total de ventas</th>
+                    <th className={styles.tr}>Comision</th>
+                    <th className={styles.tr}>Detalles</th>
+                  </tr>
+              {business && business.map((buss,index) =>{
+                return (
+                  <tr key={index} className={styles.trPosition}>
+                    <td>{buss.nameAgency}</td>
+                    <td>${buss.finalPrice}</td>
+                    <td>${buss.finalPrice * 0.025}</td>
+                    <td><Link className={styles.linkStyle} to={`/empresas/${buss.nameAgency.replace(/\s/g, '')}`}>Detalles de la empresa</Link></td>
+                  </tr>
+                )
+              })}
+              </tbody>
+            </table>
+        </div>
       </div>
     </div>
     : <p>Loading..</p>}
+    </div>
     </>
   );
 }
