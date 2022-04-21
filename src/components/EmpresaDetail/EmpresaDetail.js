@@ -10,7 +10,6 @@ export default function EmpresaDetail() {
   const dispatch = useDispatch()
   const data = useSelector(state => state.businessDetail)
   const splitted = location.pathname.split("/")
-  console.log(data)
 
   useEffect(() => {
     dispatch(getBusinessDetail(splitted[2]))
@@ -51,23 +50,3 @@ export default function EmpresaDetail() {
     </div>
   )
 }
-/* 
-<table cellSpacing='10' className={styles.table}>
-    <tr className={styles.trPosition}>
-      <th className={styles.tr}>Nombre de empresa</th>
-      <th className={styles.tr}>Total de ventas</th>
-      <th className={styles.tr}>Comision</th>
-      <th className={styles.tr}>Detalles</th>
-    </tr>
-    {business && business.map((buss,index) =>{
-    return (
-    <tr className={styles.trPosition}>
-      <td>{buss.nameAgency}</td>
-      <td>${buss.finalPrice}</td>
-      <td>${buss.finalPrice * 0.025}</td>
-      <td><Link className={styles.linkStyle} to={`/empresas/${buss.nameAgency.replace(/\s/g, '')}`}>Detalles de la empresa</Link></td>
-    </tr>
-    )
-    })}
-</table>
- */
